@@ -11,6 +11,18 @@ module.exports = {
       loader: 'babel-loader',
       test: /\.js$/,
       exclude: /node_modules/
-    }]
+    } ,
+    {
+      test: /\.s?css$/  ,
+      use: [ 'style-loader' , 
+     'css-loader'  ,
+     'sass-loader'  
+       ]                    /*To Specify array of loaders*/ 
+    }
+  ]
+  },
+  devtool: 'eval-cheap-module-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, 'public')
   }
 };
